@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Document</title>
+</head>
+<body>
+          <script>
+                    //вывести числа от 10 до 5
+                    // let i = 10;
+                    // let n = 5;
+                    // while(i>=n){
+                    //           console.log(i);
+                    //           --i;
+                    // }
+
+
+
+                    //пользователь вводит числа, они суммируются, пользователь нажимает отмена-подсчет останавливается
+
+                    // let sum=0;
+                    // let num = parseInt(prompt('Enter the number'));
+                    // while(num && num>0){
+                    //           sum=sum+num;
+                    //           num = parseInt(prompt('Enter the number'));
+                              
+                    // }
+                    // alert(`sum=${sum}`)
+
+
+                    //пользователь вводит число-определить колво цифр
+                    // let num = parseInt(prompt('Enter the number'));
+                    // let k=0;
+                    // while(num && num>=0){
+                    //           num=Math.floor(num/10);
+                    //           k++;
+                    // }
+                    // alert(`k=${k}`);
+
+
+                    //вывести все четные числа от 1 до 5
+                    // let i = 1;
+                    // do{
+                    //           if(i%2==0){
+                    //           console.log(i);}
+                    //           i++;
+                    // }while(i<=5);
+
+
+
+                    //guess the number
+
+                    // alert('Загдайте число от 1 до 100');
+                    // let min = 1, max=100, number;
+                    // alert('Загадай число от 1 до 100');
+                    // do{
+                    //           limit=Math.floor((max+min)/2);
+                    //           let num = +prompt(`Введите 1 если ваше число >${limit}
+                    //           Введите 2 если ваше число <${limit}
+                    //           Введите 3 если ваше число =${limit}`);
+                    //           switch(num){
+                    //                     case 1 : { min=limit;         break;}
+                    //                     case 2 : { max=limit;  break;}
+                    //                     case 3 : {
+                    //                               number= limit;
+                    //                               alert(`Ура, я отгадал ваше число ${number}`);
+                    //                                break;}
+                    //           }
+                    // }while(!number)
+
+
+
+                    //rock scissors and paper     
+                    let pl_score=0, com_score=0;
+                    for(let i=1; i<=3; ++i){
+                              let pl_select=prompt(`
+                              Введите н = ножницы /n
+                              Введите б = бумага /n
+                              Введите к = камень /n
+                              `)
+                              let com_select = Math.floor(Math.random()*3+1);
+                              switch (com_select){
+                                        case 1 : {com_select='к';break}
+                                        case 2 : {com_select='б'; break}
+                                        case 3 : {com_select='н'; break}
+                              }
+                              if (pl_select==com_select){}
+                              if(pl_select=='н'&& com_select=='к'){++com_score}
+                              if(pl_select=='н'&& com_select=='б'){++pl_score}
+                              if(pl_select=='к'&& com_select=='б'){++com_score}
+                              if(pl_select=='к'&& com_select=='н'){++pl_score}
+                              if(pl_select=='б'&& com_select=='к'){++pl_score}
+                              if(pl_select=='б'&& com_select=='н'){++com_score}
+                              if(pl_score>com_score)alert('Выиграл игрок');
+                              if(pl_score<com_score)alert('Выиграл comp');
+                              if(pl_score==com_score)alert('Draw');
+                              alert(`
+                              Вы выбрали ${pl_select} /n
+                              Компьютер выбрал ${com_select} /n
+                              Игрок ${pl_score} и комп ${com_score}
+                              `)         
+                    }          
+                              
+          </script>
+</body>
+</html>
